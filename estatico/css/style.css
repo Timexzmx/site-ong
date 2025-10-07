@@ -1,0 +1,352 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu";
+  font-style: Medium;
+}
+/* corpo */ 
+body {
+  width: 100vw;
+  height: auto;
+}
+
+/* header */
+#logo{
+  padding: 10px;
+  width: 120px;
+}
+.cabecalho{
+  position: relative;
+  width: 100%;
+  height: 20vh;
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cabecalho-logo{
+  display: flex;
+  gap: 15px;
+  font-size: 32px;
+}
+.cabecalho nav{
+  position: absolute;
+  bottom: 0;
+  right: 0;;
+  display: flex;
+  gap: 20px;
+
+  align-items: center;
+  text-align: bottom;
+  padding: 20px;
+}
+nav a{
+   text-decoration: none;
+   color: black
+}
+#doe {
+  background-color: red;
+ padding: 10px;
+ border-radius: 8px;
+ color: white; 
+}
+/* main */
+/* onde ficara todo o conteúdo */
+
+main{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* introdução e imagem */
+
+.transformando{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  background-color: #f5f5f5;
+}
+
+.transformando-todo{
+  width: 100%;
+  display: flex;
+  padding: 20px;
+}
+.transformando-texto{
+  display: flex;
+  flex-direction: column;
+  padding: 60px;
+  gap: 40px;
+}
+.transformando-texto h2{
+  font-size: 48px;
+}
+#transformando-info{
+  font-size: 20px;
+  color: #757575;
+}
+#vulnerabilidade{
+  color: red;
+}
+.imagem{
+  display: flex;
+  width: 100%;
+  padding: 40px;
+}
+.img{
+  
+  background-image: url('../img/imagem.png');
+  background-position: center;
+  width: 90%;
+  border-radius: 5px;
+  height: 50vh;
+  display: flex;
+ 
+}
+.quem-somos{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px;
+  height: 40vh;
+  justify-content: center;
+  align-items: center;
+}
+.quem-somos div{
+ width: 60%;
+}
+.quem-somos h2{
+  font-size: 36px;
+}
+.quem-somos div p{
+  font-size: 20px;
+  color: #757575;
+  font-style: Regular;
+}
+.cards{
+  background-color: #f92A35;
+  display: flex;
+  gap: 40px;
+  width: 100%;
+  padding: 20px;
+  height: 60vh;
+  justify-content: center;
+  align-items: center;
+}
+.missao, .visao, .valores{
+  color: white;
+  background-color: #F83B46;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 30%;
+  text-align: center;
+  font-size: 14px;
+  height: 30vh;
+  padding: 20px;
+}
+.missao h2, .visao h2, .valores h2{
+  font-size: 24px;
+}
+.acoes{ 
+ display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 20px;
+ background-color: #f5f5f5;
+ padding: 40px;
+}
+.acoes-cards{
+  display: flex;
+  flex-direction: column;
+}
+.acoes-1{
+  display: flex;
+  gap: 80px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.entrega, .cestas, .aulas{
+  color: black;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 25%;
+  text-align: center;
+  font-size: 14px;
+  height: auto;
+  padding: 30px;
+  border-radius: 20px;
+
+}
+.entrega h2, .cestas h2, .aulas h2{
+  font-size: 24px;
+  color: red;
+}
+
+.acoes-2{
+  display: flex;
+  
+  gap: 80px;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 80px;
+    padding-right: 80px;
+}
+.cadeiras, .socioemocional{
+  color: black;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 30%;
+  text-align: center;
+  font-size: 14px;
+  height: auto;
+  padding: 30px;
+  border-radius: 20px;
+  
+}
+.cadeiras h2, .socioemocional h2{
+  font-size: 24px;
+  color: red;
+}
+.voluntario{
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 60px;
+}
+.voluntario h2{
+  font-size: 32px;
+}
+.voluntario p{
+  color: #757575;
+}
+.vantagens{
+  color: #757575;
+  display: flex;
+  gap: 20%;
+  width: 100%;
+  padding: 20px;
+  justify-content:center;
+  align-items: center;
+}
+.parte1, .parte2{
+  text-align: left;
+}
+.voluntario button{
+  background-color: red;
+  color: white;
+  padding: 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.apoio{
+    background-color: #F83B46;
+    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 40px;
+  gap: 20px;
+}
+.pix{
+  padding: 20px;
+  width: 35%;
+  border-radius: 20px;
+  background-color: white;
+  display: flex;
+  gap: 30px;
+}
+.pix-texto{
+  color: red;
+  font-weight: 600;
+}
+.pix-qrcode{
+  display: flex;
+  flex-direction: column;
+  color: #757575;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.pix-qrcode img{
+  width: 120px;
+}
+.apoio a {
+  display: flex;
+  gap: 15px;
+  background-color: #c10007;
+  color: white;
+  padding: 15px;
+  text-decoration: none;
+  border-radius: 10px;
+}
+#ig{
+  width: 20px;
+}
+.saiba-mais{
+  width: 100%;
+  background-color: #10182B;
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+} 
+.saiba-mais-todo{
+  display: flex;
+  justify-content: space-between;
+}
+.redes p img{
+  width: 18px;
+}
+#ig_qrcode{
+  width: 150px;
+}
+.redes{
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+/* instagram */ 
+.redes p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #757575;
+  gap: 5px;
+}
+.localizacao{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  gap: 10px;
+}
+.localizacao p{
+  color: #757575;
+}
+.rodape{
+  width: 100%;
+  border-top: 1px solid #757575;
+}

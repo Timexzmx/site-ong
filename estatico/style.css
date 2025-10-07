@@ -1,0 +1,237 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+/* corpo */ 
+body {
+  width: 100vw;
+  height: auto;
+}
+
+/* header */
+
+.cabecalho{
+  width: 100%;
+  padding: 40px;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  color: white;
+  text-align: center;
+  border-bottom-left-radius: 10%;
+   border-bottom-right-radius: 10%;
+}
+.cabecalho button {
+  padding: 10px;
+}
+
+/* main */
+/* onde ficara todo o conteúdo */
+
+main{
+  gap: 50px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+.logo{
+  width: 100%;
+  height: 100vh;
+  background-image: url('../img/background.jpg');
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  color: white;
+}
+
+.sobre{
+  gap: 60px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  font-size: 24px;
+}
+.sobre h2{
+  font-size: 40px;
+}
+.titulo-sobre{
+  width: 100%;
+  text-align: left;
+  font-size: 40px;
+}
+ .texto-sobre {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   text-align: left;
+   align-items: center;
+   height: 30vh;
+   overflow: hidden;
+   font-size: 30px;
+   padding: 20px;
+   border: 1px solid black;
+   gap: 30px;
+ }
+ 
+ .carrossel {
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   border: 1px solid black;
+   align-items: center;
+   justify-content: center;
+   gap: 40px;
+ }
+ .carrossel h3{
+   font-size: 40px;
+ }
+ .quadros{
+   width: 100%;
+   display: flex;
+   border: 10px solid red;
+   justify-content: space-between;
+ }
+ .c1, .c2, .c3{
+   display: flex;
+   width: 30%;
+   height: 20vh;
+   border: 1px solid green;
+ }
+ 
+  .c1{
+    background-color: red;
+  } .c2{
+    background-color: green;
+  } .c3{
+    background-color: blue;
+  }
+.voluntario {
+  display: flex;
+  border: 1px solid black;
+  width: 100%;
+  padding: 20px;
+  height: 60vh;
+}
+
+.titulo-voluntario {
+  width: 40%;
+  font-size: 30px;
+  letter-spacing: 0.5rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+.texto-voluntario {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+    
+  width: 60%;
+  font-size: 30px;
+  padding: 5rem;
+  color: white;
+  border-start-start-radius: 10%;
+  border-end-start-radius: 10%;
+  
+  background-color: black;
+  border: 1px solid white;
+}
+.texto-voluntario button{
+  width: 50%;
+  padding: 40px;
+  position: absolute;
+  bottom: 10%;
+  font-size: 24px;
+}
+
+.doador {
+ display: flex;
+  border: 1px solid black;
+  width: 100%;
+  padding: 20px;
+  height: 60vh;
+}
+.titulo-doador {
+   width: 40%;
+  font-size: 30px;
+  letter-spacing: 0.5rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+.texto-doador {
+   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+    
+  width: 60%;
+  font-size: 30px;
+  padding: 5rem;
+  color: white;
+  border-start-start-radius: 10%;
+  border-end-start-radius: 10%;
+  
+  background-color: black;
+  border: 1px solid white;
+}
+.texto-doador button{
+   width: 50%;
+  padding: 40px;
+  position: absolute;
+  bottom: 10%;
+  font-size: 24px;
+
+}
+
+.projetos{
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  text-align: left;
+}
+.carrossel-projetos{
+  width: 100%;
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+}
+.quadros2{
+  width: 95%;
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+} 
+.c4, .c5, .c6{
+  width: 30%;
+  height: 20vh;
+}
+.c4{
+  background-color: red;
+}
+.c5{
+  background-color: blue;
+}
+.c6{
+  background-color: yellow;
+} 
