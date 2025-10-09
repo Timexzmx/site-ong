@@ -51,7 +51,7 @@ function CadastroFormulario(props) {
         console.log('telefone:' + telefone);
         console.log('observacoes:' + observacoes);
         try {
-            const response = await fetch('https://coracao-quentinho-ong-production.up.railway.app/voluntarios', {
+            const response = await fetch('https://coracao-quentinho-ong-production.up.railway.app/voluntarios/cadastrar', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -70,6 +70,11 @@ function CadastroFormulario(props) {
                 setDisplaySubmitError(false);
                 setSubmitError('');
                 props.setDisplayFormVoluntario(false)
+
+                props.setDisplayMessage(true);
+                props.setMessageContent("Cadastrado com sucesso");
+                props.setIsMessageError(false);
+
             } else if (response.status === 403) {
                 setDisplaySubmitError(true);
                 setSubmitError('Esse email já foi cadastrado');

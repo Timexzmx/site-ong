@@ -6,10 +6,14 @@ import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import CadastroFormulario from './componentes/CadastroFormulario.jsx';
+import Message from './componentes/Message.jsx';
 
 function App() {
 
   const [displayFormVoluntario, setDisplayFormVoluntario] = useState(false);
+  const [displayMessage, setDisplayMessage] = useState(false);
+  const [messageContent, setMessageContent] = useState('');
+  const [isMessageError, setIsMessageError] = useState(false);
 
   return (
     <>
@@ -197,7 +201,15 @@ function App() {
         </section>
 
       </main>
-        {displayFormVoluntario ? <CadastroFormulario setDisplayFormVoluntario={setDisplayFormVoluntario}/> : null}
+      {displayFormVoluntario ?
+        <CadastroFormulario
+          setDisplayFormVoluntario={setDisplayFormVoluntario}
+          setMessageContent={setMessageContent}
+          setDisplayMessage={setDisplayMessage}
+          setIsMessageError={setIsMessageError} />
+        : null}
+
+      {displayMessage ? <Message message={messageContent} isMessageError={isMessageError} setDisplayMessage={setDisplayMessage} /> : null}
     </>
   )
 }
