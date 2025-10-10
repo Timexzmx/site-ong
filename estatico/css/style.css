@@ -67,6 +67,7 @@ main{
   width: 100%;
   height: auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   background-color: #f5f5f5;
 }
@@ -99,13 +100,12 @@ main{
 }
 .img{
   
-  background-image: url('../img/imagem.png');
+  background-image: url('./img/imagem.png');
   background-position: center;
   width: 90%;
   border-radius: 5px;
   height: 50vh;
   display: flex;
- 
 }
 .quem-somos{
   text-align: center;
@@ -349,4 +349,361 @@ main{
 .rodape{
   width: 100%;
   border-top: 1px solid #757575;
+}
+
+/* responsividade */
+
+@media(max-width: 768px){
+  
+  #logo{
+  padding: 10px;
+  width: 200px;
+}
+  .cabecalho{
+  width: 100%;
+  height: 70vh;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.cabecalho-logo{
+  display: flex;
+  gap: 15px;
+  font-size: 32px;
+}
+.cabecalho nav{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  text-align: bottom;
+
+}
+nav a{
+   text-decoration: none;
+   color: black;
+   width: 100%;
+   
+}
+#doe {
+  background-color: red;
+ padding: 15px;
+ border-radius: 2px;
+ color: white; 
+}
+
+/* corpo */
+main{
+  display: flex;
+  flex-direction: colum;
+
+}
+.transformando{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  background-color: #f5f5f5;
+}
+
+.transformando-todo{
+  width: 100%;
+  display: flex;
+  padding: 20px;
+}
+.transformando-texto{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 60px;
+  gap: 40px;
+}
+.transformando-texto h2{
+  font-size: 32px;
+}
+#transformando-info{
+  font-size: 16px;
+  color: #757575;
+}
+#vulnerabilidade{
+  color: red;
+}
+.imagem{
+  display: flex;
+  width: 100%;
+  padding: 40px;
+  justify-content: center;
+  align-items: center;
+}
+.img{
+  
+  background-image: url('../img/imagem.png');
+  background-position: center;
+  width: 90%;
+  border-radius: 5px;
+  height: 40vh;
+  display: flex;
+ 
+}
+
+.quem-somos{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px;
+  width: 100%;
+  height: 80vh;
+  justify-content: center;
+  align-items: center;
+}
+.quem-somos div{
+ width: 90%;
+ text-align: left;
+}
+.quem-somos h2{
+  font-size: 32px;
+}
+.quem-somos div p{
+  font-size: 18px;
+  color: #757575;
+  font-style: Regular;
+}
+
+.cards{
+  background-color: #f92A35;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 40px;
+  height: auto;
+  gap: 40px;
+}
+.missao, .visao, .valores{
+  color: white;
+  background-color: #F83B46;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 60%;
+  text-align: center;
+  font-size: 14px;
+  height: 25vh;
+  padding: 20px;
+}
+.missao h2, .visao h2, .valores h2{
+  font-size: 24px;
+}
+
+.acoes{ 
+ display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 20px;
+ background-color: #f5f5f5;
+ padding: 40px;
+}
+.acoes-cards{
+  display: flex;
+  flex-direction: column;
+}
+.acoes-1{
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.entrega, .cestas, .aulas{
+  color: black;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 70%;
+  text-align: center;
+  font-size: 14px;
+  height: auto;
+  padding: 30px;
+  border-radius: 20px;
+
+}
+.entrega h2, .cestas h2, .aulas h2{
+  font-size: 24px;
+  color: red;
+}
+
+.acoes-2{
+
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.cadeiras, .socioemocional{
+ color: black;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  width: 70%;
+  text-align: center;
+  font-size: 14px;
+  height: auto;
+  padding: 30px;
+  border-radius: 20px;
+  
+}
+.cadeiras h2, .socioemocional h2{
+  font-size: 24px;
+  color: red;
+}
+.voluntario{
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 60px;
+}
+.voluntario h2{
+  font-size: 32px;
+}
+.voluntario p{
+  color: #757575;
+}
+.vantagens{
+  color: #757575;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  padding: 20px;
+  text-align: left;
+}
+.parte1, .parte2{
+  text-align: left;
+  width: 80%;
+}
+.voluntario button{
+  background-color: red;
+  color: white;
+  padding: 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.apoio{
+    background-color: #F83B46;
+    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 40px;
+  gap: 20px;
+}
+.pix{
+  padding: 20px;
+  width: 80%;
+  border-radius: 20px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.pix-texto{
+  color: red;
+  font-weight: 600;
+}
+.pix-qrcode{
+  display: flex;
+  flex-direction: column;
+  color: #757575;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.pix-qrcode img{
+  width: 200px;
+}
+.apoio a {
+  display: flex;
+  gap: 15px;
+  background-color: #c10007;
+  color: white;
+  padding: 25px;
+  text-decoration: none;
+  border-radius: 10px;
+}
+#ig{
+  width: 20px;
+}
+.saiba-mais{
+  width: 100%;
+  background-color: #10182B;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+} 
+.saiba-mais-todo{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 50px;
+}
+.redes p img{
+  width: 18px;
+}
+#ig_qrcode{
+  width: 150px;
+}
+.redes{
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+/* instagram */ 
+.redes p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #757575;
+  gap: 5px;
+}
+.localizacao{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  gap: 10px;
+}
+.localizacao p{
+  color: #757575;
+}
+.rodape{
+  width: 100%;
+  border-top: 1px solid #757575;
+}
+
 }
