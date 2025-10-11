@@ -1,0 +1,94 @@
+#mainDiv-login{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #500011;
+}
+#loginContainer{
+    background-color: #ffffff;
+    padding: 3rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+    min-width: 270px;
+    width: 40%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: 1px solid rgb(109, 109, 109);
+    
+}
+#titleLogin{
+    font-size: 2.5rem;
+    color: #f92A35;
+}
+.inputContainer{
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+    width: 55%;
+    min-width: 220px;
+}
+.input{
+    width: 100%;
+    height: 35px;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid black;
+}
+.passwordContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+}
+.passwordInput{
+    padding-right: 40px;
+}
+.passwordVisibilityButton{
+    background-color: transparent;
+    cursor: pointer;
+    position: absolute;
+    right: 0.5rem;
+    bottom: 2px;
+    font-size: 1rem;
+    border: none;
+
+}
+.buttonSubmitContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+}
+#loginError{
+    color: red;
+}
+.loginSubmitButton{
+    width: 50%;
+    max-width: 200px;
+    min-width: 140px;
+    height: 35px;
+    border-radius: 5px;
+    background-color: #f92A35;
+    border: none;
+    color: #eee;
+}
+.loginSubmitButton:hover{
+    background-color: #c7222a;
+    cursor: pointer;
+}
+#esqueciASenha{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    margin-top: 0.5rem;
+}
+#esqueciASenha:hover{
+    color: #ff0037
+}

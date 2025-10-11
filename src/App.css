@@ -5,10 +5,14 @@
   font-family: "Ubuntu";
   font-style: Medium;
 }
+html, #root{
+  width: 100%;
+  height: 100%;
+}
 /* corpo */ 
 body {
-  width: 100vw;
-  height: auto;
+  width: 100%;
+  height: 100%;
 }
 #root{
     position: relative;
@@ -48,7 +52,7 @@ nav a{
    color: black
 }
 #doe {
-  background-color: red;
+background-color: red;
  padding: 10px;
  border-radius: 8px;
  color: white; 
