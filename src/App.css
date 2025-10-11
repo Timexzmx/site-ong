@@ -4,53 +4,71 @@
   box-sizing: border-box;
   font-family: "Ubuntu";
   font-style: Medium;
+  transition: 0.4s;
 }
 /* corpo */ 
 body {
   width: 100vw;
   height: auto;
+  display: flex;
+  flex-direction: column;
 }
 #root{
     position: relative;
 }
-/* header */
-#logo{
+
+/* cabeçalho e navegação  */
+
+.cabecalho{
+  width: 100%;
+  height: auto;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+/* logo coração quentinho - div */
+
+.logo-cabecalho{
+ 
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  font-size: 32px;
+}
+
+/* logo coração quentinho - imagem */
+
+.logo{
   padding: 10px;
   width: 120px;
 }
-.cabecalho{
-  position: relative;
-  width: 100%;
-  height: 20vh;
-  padding: 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.cabecalho-logo{
-  display: flex;
-  gap: 15px;
-  font-size: 32px;
-}
-.cabecalho nav{
-  position: absolute;
-  bottom: 0;
-  right: 0;;
+
+/* navbar */ 
+.cabecalho-navegacao{
+  
   display: flex;
   gap: 20px;
-
-  align-items: center;
-  text-align: bottom;
+  width: 100%;
   padding: 20px;
+  justify-content: right;
 }
-nav a{
+/* navbar texto */
+.cabecalho-navegacao a{
    text-decoration: none;
    color: black;
    transition: 0.3s;
 }
-nav a:hover{
+/* navbar animação básica */
+
+.cabecalho-navegacao a:hover{
   color: red;
 }
+
+/* botão direcionando para seção de doação*/
+
 #doe {
   background-color: red;
   transition: 0.3;
@@ -61,6 +79,7 @@ nav a:hover{
 #doe:hover{
   color: #F83B46;
 }
+
 /* main */
 /* onde ficara todo o conteúdo */
 
@@ -71,19 +90,23 @@ main{
   flex-direction: column;
 }
 
-/* introdução e imagem */
+/* pequena historia e imagem */
 
-.transformando{
+.historia-ong{
   width: 100%;
   height: auto;
+  min-height: 60vh;
   display: flex;
+  gap: 50px;
+  flex-direction: column;
   justify-content: center;
   background-color: #f5f5f5;
 }
 
-.transformando-todo{
+.transformando{
   width: 100%;
   display: flex;
+  flex-direction: column;
   padding: 20px;
 }
 .transformando-texto{
@@ -91,11 +114,13 @@ main{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 60px;
-  gap: 40px;
+  text-align: center;
+  width: 1 1 50%;
 }
 .transformando-texto h2{
   font-size: 48px;
+  width: 100%;
+
 }
 .transformando-info{
   font-size: 20px;
@@ -105,38 +130,38 @@ main{
   color: red;
 }
 .imagem {
+  width: 100%;
 
   display: flex;
-  
-  width: 45%;
-  padding: 20px;
+  justify-content: center;
+  align-items: center;
 }
 .img {
-  
+  margin: 0 auto;
   width: 100%;
   max-width: 800px;
 }
 .imgCarrossel {
   width: 100%;
-  height: 50vh;
-  max-height: 50vh;        
+  height: auto;
+  max-height: 20vh;        
   object-fit: contain;    
   display: block;
   border-radius: 5px;
 }
-
 .quem-somos{
   text-align: center;
   display: flex;
   flex-direction: column;
   gap: 20px;
   padding: 40px;
-  height: 40vh;
+  height: auto;
+  min-height: 50vh;
   justify-content: center;
   align-items: center;
 }
 .quem-somos div{
- width: 60%;
+ width: 1 1 60%;
 }
 .quem-somos h2{
   font-size: 36px;
@@ -146,27 +171,36 @@ main{
   color: #757575;
   font-style: Regular;
 }
+
+/* organização dos cards */
+
 .cards{
+   width: 100%;
   background-color: #f92A35;
   display: flex;
-  gap: 40px;
-  width: 100%;
-  padding: 20px;
-  height: 50vh;
-  justify-content: center;
+  flex-wrap: wrap;   
   align-items: center;
+  justify-content: center; 
+  gap: 20px;   
+  display: flex;
+  height: auto;
+  min-height: 50vh;
 }
 .missao, .visao, .valores{
-  color: white;
+   color: white;
   background-color: #F83B46;
+  text-align: center;
+  padding: 40px;
+  flex: 1 1 250px;    
+  max-width: 300px;       
+  min-width: 200px;     
+  min-height: 10vh;
+  max-height: 15vh;
+  gap: 20px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  width: 30%;
-  text-align: center;
-  font-size: 14px;
-  height: 10vh;
-  padding: 20px;
+  overflow-wrap: break-word; 
+  word-wrap: break-word;
 }
 .missao h2, .visao h2, .valores h2{
   font-size: 24px;
@@ -377,17 +411,54 @@ main{
   padding: 40px;
 }
 
+/* tablet / notebook médio */
+
+@media (max-width: 1024px) {
+  .cabecalho {
+    padding: 20px;
+  }
+
+  .transformando-texto {
+    padding: 40px;
+    gap: 20px;
+  }
+
+  .cards {
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  .missao, .visao, .valores {
+    width: 45%;
+    height: auto;
+  }
+
+  .acoes-1, .acoes-2 {
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+  }
+
+  .entrega, .cestas, .aulas, .cadeiras, .socioemocional {
+    width: 40%;
+  }
+
+  .vantagens {
+    gap: 10%;
+  }
+}
 
 @media(max-width: 768px){
   
   #logo{
   padding: 10px;
-  width: 200px;
+  max-width: 200px;
 }
   .cabecalho{
   width: 100%;
-  height: 70vh;
-  padding: 40px;
+  height: auto;
+  min-height: 70vh;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -397,7 +468,7 @@ main{
   gap: 15px;
   font-size: 32px;
 }
-.cabecalho nav{
+.cabecalho-navegacao{
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -407,9 +478,9 @@ main{
   text-align: bottom;
 
 }
-nav a{
+.cabecalho-navegacao a{
    text-decoration: none;
-   color: black;
+  
    width: 100%;
    
 }
@@ -417,7 +488,7 @@ nav a{
   background-color: red;
  padding: 15px;
  border-radius: 2px;
- color: white; 
+ color: white;
 }
 
 /* corpo */
@@ -484,7 +555,8 @@ main{
   gap: 20px;
   padding: 40px;
   width: 100%;
-  height: 80vh;
+  height: auto;
+  min-height: 100vh;
   justify-content: center;
   align-items: center;
 }
@@ -502,13 +574,18 @@ main{
 }
 
 .cards{
+  width: 100%;
   background-color: #f92A35;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  padding: 40px;
+  flex-wrap: wrap;   
+  align-items: center;
+  justify-content: center; 
+  gap: 40px;   
+  display: flex;
   height: auto;
-  gap: 40px;
+  min-height: 100vh;
+  padding: 40px;
 }
 .missao, .visao, .valores{
   color: white;
@@ -519,7 +596,8 @@ main{
   width: 60%;
   text-align: center;
   font-size: 14px;
-  height: 30vh;
+  height: auto;
+  min-height: 30vh;
   padding: 25px;
 }
 .missao h2, .visao h2, .valores h2{
@@ -601,6 +679,8 @@ main{
   text-align: center;
   justify-content: center;
   align-items: center;
+  height: auto;
+  min-height: 100vh;
   gap: 40px;
   padding: 60px;
 }
@@ -641,6 +721,8 @@ main{
   justify-content: center;
   color: white;
   padding: 40px;
+  height: auto;
+  min-height: 100vh;
   gap: 20px;
 }
 .pix{
@@ -665,7 +747,7 @@ main{
   gap: 10px;
 }
 .pix-qrcode img{
-  width: 200px;
+  min-width: 200px;
 }
 .apoio a {
   display: flex;
@@ -680,7 +762,7 @@ main{
   width: 20px;
 }
 .saiba-mais{
-  width: 100vw;
+  width: 100%;
   background-color: #10182B;
   display: flex;
   flex-direction: column;
