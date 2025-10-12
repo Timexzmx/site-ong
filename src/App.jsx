@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -7,6 +7,9 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import CadastroFormulario from './componentes/CadastroFormulario.jsx';
 import Message from './componentes/Message.jsx';
+import MenuHome from './componentes/MenuHome.jsx'
+
+import { Menu, X} from 'lucide-react';
 
 function App() {
 
@@ -14,6 +17,18 @@ function App() {
   const [displayMessage, setDisplayMessage] = useState(false);
   const [messageContent, setMessageContent] = useState('');
   const [isMessageError, setIsMessageError] = useState(false);
+
+  const [windowScreenSize, setWindowScreenSize] = useState(window.innerWidth)
+  const [displayMenu, setDisplayMenu] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowScreenSize(window.innerWidth);
+    }
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
 
   return (
     <>
@@ -25,17 +40,28 @@ function App() {
         </div>
 
         <nav>
-          <a href="#quem-somos">Quem Somos</a>
-          <a href="">Ações</a>
-          <a href="">Missões & Valores</a>
-          <a href="">Voluntarie-se</a>
-          <a href="" id="doe">Doar</a>
+          {windowScreenSize <= 720 ? (
+            <>
+            <button id="mobileNavbar" type='button' onClick={() => {
+              setDisplayMenu(!displayMenu);
+            }}><Menu className='menuIcon'/></button>
+            </>
+          ) : (
+            <>
+            <a href="#quem-somos">Quem Somos</a>
+            <a href="#acoes">Ações</a>
+            <a href="#cards">Missões & Valores</a>
+            <a href="#voluntario">Voluntarie-se</a>
+            <a href="#apoio" id="doe">Doar</a>
+            </>
+          )}
         </nav>
       </header>
-      <main>
+
 
         {/* inicio */}
 
+      <main>
         <section className="transformando">
           <div className="transformando-todo">
             <div className="transformando-texto">
@@ -65,7 +91,7 @@ function App() {
           </div>
         </section>
 
-        <section className="quem-somos">
+        <section id="quem-somos">
           <h2>Quem somos</h2>
           <div>
             <p>O Coração Quentinho é uma ONG formada por voluntários que distribuem jantas para pessoas em situação de rua,
@@ -76,7 +102,7 @@ function App() {
         </section>
 
 
-        <section className="cards">
+        <section id="cards">
           <div className="missao">
             <h2>Missão</h2>
             <p>Assistir pessoas em situação de vulnerabilidade,<br /> com foco no acolhimento,
@@ -97,7 +123,7 @@ function App() {
           </div>
         </section>
 
-        <section className="acoes">
+        <section id="acoes">
           <h2>Nossas Ações</h2>
           <p>Conheça os principais projetos que transformam realidades e impactam vidas.</p>
 
@@ -138,7 +164,7 @@ function App() {
 
           </div>
         </section>
-        <section className="voluntario">
+        <section id="voluntario">
           <h2>Voluntarie-se</h2>
           <p>Ser voluntário no Coração Quentinho é aprender, crescer, transformar vidas e viver a empatia de forma prática.</p>
 
@@ -161,7 +187,7 @@ function App() {
 
         {/* apoie nosso trabalho */}
 
-        <section className="apoio">
+        <section id="apoio">
           <h2>Apoie a Nossa Causa</h2>
           <p>Sua contribuição mantém nossos projetos vivos e impactando vidas todos os dias.</p>
 
@@ -210,6 +236,8 @@ function App() {
         : null}
 
       {displayMessage ? <Message message={messageContent} isMessageError={isMessageError} setDisplayMessage={setDisplayMessage} /> : null}
+
+      {displayMenu ? <MenuHome setDisplayMenu={setDisplayMenu}/> : null}
     </>
   )
 }

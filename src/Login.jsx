@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {Eye, EyeOff} from 'lucide-react';
 import {useNavigate} from 'react-router-dom';
 import Message from './componentes/Message.jsx';
@@ -6,8 +6,6 @@ import Message from './componentes/Message.jsx';
 import './Login.css';
 
 //PRECISA FAZER UM useEffect PRA VERIFICAR SE O USUÁRIO ESTÁ LOGADO
-//PRECISA FAZER AS VALIDAÇÕES
-//PRECISA AJEITAR O Message.jsx PRA RENDERIZAR GLOBALMENTE SEM A NECESSIDADE DE INSERIR MANUALMENTE EM CADA PÁGINA
 
 function Login() {
     
@@ -17,9 +15,18 @@ function Login() {
     const [password, setPassword] = useState('')
     const navigate = useNavigate()
 
+    const [displayMessage, setDisplayMessage] = useState(false)
+    const [isMessageError, setIsMessageError] = useState(false);
+    const [message, setMessage] = useState('')
 
     async function submitLogin(){
         try{
+        if(!email.trim() || !password.trim()){
+            setLoginError('Todos os campos devem ser preenchidos');
+            return
+        }
+
+
         const response = await fetch('https://coracao-quentinho-ong-production.up.railway.app/auth/login', {
             method: 'POST',
             headers: {
@@ -32,11 +39,17 @@ function Login() {
         }else{
             const result = await response.json();
             console.log(result);
-            <Message isMessageError={true} message={result.error}/>
+            setIsMessageError(true);
+            setMessage(result.error);
+            setDisplayMessage(true);
+            setLoginError('')
+            return
         }
     }catch(err){
         console.log(err.message);
-        return <Message isMessageError={true} message={err.message}/>
+        setIsMessageError(true);
+        setMessage(err.message);
+        setDisplayMessage(true);
     }
     }
 
@@ -45,13 +58,13 @@ function Login() {
             <div id='loginContainer'>
                 <h1 id="titleLogin">Login</h1>
                 <div className="inputContainer">
-                    <input type="text" className="input" placeholder='Digite seu email' value={email} onChange={(e) => {
+                    <input type="email" className="input" placeholder='Digite seu email' value={email} onChange={(e) => {
                         setEmail(e.target.value);
-                    }}/>
+                    }} required/>
                     <div className="passwordContainer">
                         <input type={passwordVisibility ? "text" : "password"} className="input passwordInput" placeholder='Digite sua senha' value={password} onChange={(e) => {
                             setPassword(e.target.value);
-                        }}/>
+                        }} required/>
                         <button type='button' className="passwordVisibilityButton" onClick={()=> {
                             setPasswordVisibility(!passwordVisibility);
                         }}>{passwordVisibility ? <Eye className='eyeIcon'/> : <EyeOff className='eyeIcon'/>}</button>
@@ -63,6 +76,7 @@ function Login() {
                     <a href="#" id="esqueciASenha">Esqueci a Senha</a>
                     </div>
             </div>
+            {displayMessage ? <Message setDisplayMessage={setDisplayMessage} message={message} isMessageError={isMessageError} /> : null}
         </div>
     )
 }

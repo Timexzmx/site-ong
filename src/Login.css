@@ -65,10 +65,11 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-
 }
 #loginError{
     color: red;
+    position: relative;
+    top: -1rem;
 }
 .loginSubmitButton{
     width: 50%;

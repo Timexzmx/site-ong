@@ -1,0 +1,53 @@
+#menuContainerMasterPlus{
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.41);
+
+    width: 100%;
+    height: 100%;
+    z-index: 99999999999999999999999;
+}
+#menuContainer{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #FFF;
+    border: none;
+    border-radius: 10px;
+    position: fixed;
+    padding: 3rem 1rem 1rem 1rem;
+    width: 50%;
+    min-width: 270px;
+}
+#closeButton{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+}
+#menuContainer a{
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid black;
+    width: 70%;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+#menuContainer a:nth-of-type(4), #menuContainer a:last-of-type{
+    border-bottom: none;
+}
+#menuContainer a:last-of-type{
+    padding-bottom: 10px;
+    color: white;
+}
