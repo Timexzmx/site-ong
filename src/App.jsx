@@ -35,11 +35,11 @@ function App() {
       {/* cabeçalho */}
 
       <header className="cabecalho">
-        <div className="cabecalho-logo">
-          <img src="../src/img/logo.png" id="logo" />
+        <div className="logo-cabecalho">
+          <img src="../src/img/logo.png" className="logo" />
         </div>
 
-        <nav>
+        <nav className="cabecalho-navegacao">
           {windowScreenSize <= 720 ? (
             <>
             <button id="mobileNavbar" type='button' onClick={() => {
@@ -74,8 +74,10 @@ function App() {
             </div>
           </div>
           {/* imagem */}
-
-          <div className="imagem">
+        </section>
+        <section className="historia-ong">
+          
+           <div className="imagem">
             <Swiper
               modules={[Navigation]}
               navigation
@@ -89,9 +91,22 @@ function App() {
               <SwiperSlide><img className='imgCarrossel' src="../src/img/carrossel2.jpg" /></SwiperSlide>
             </Swiper>
           </div>
+          
+          <div className="transformando">
+            <div className="transformando-texto">
+              <h2>Transformamos <br /> <span className="vulnerabilidade">Vulnerabilidade</span> em <br />Esperança</h2>
+
+              <p className="transformando-info">Há quase 3 anos, o Coração Quentinho atua no Recife, levando refeições, cestas básicas, cadeiras de rodas, aulas de artesanato e apoio socioemocional para crianças. Somos movidos pela solidariedade e pelo amor ao próximo.
+              </p>
+
+            </div>
+          </div>
+          {/* imagem */}
+
+         
         </section>
 
-        <section id="quem-somos">
+        <section className="quem-somos" id="quem-somos">
           <h2>Quem somos</h2>
           <div>
             <p>O Coração Quentinho é uma ONG formada por voluntários que distribuem jantas para pessoas em situação de rua,
@@ -101,8 +116,7 @@ function App() {
           </div>
         </section>
 
-
-        <section id="cards">
+        <section className="cards" id="cards">
           <div className="missao">
             <h2>Missão</h2>
             <p>Assistir pessoas em situação de vulnerabilidade,<br /> com foco no acolhimento,
@@ -123,7 +137,7 @@ function App() {
           </div>
         </section>
 
-        <section id="acoes">
+        <section className="acoes" id="acoes">
           <h2>Nossas Ações</h2>
           <p>Conheça os principais projetos que transformam realidades e impactam vidas.</p>
 
@@ -164,7 +178,7 @@ function App() {
 
           </div>
         </section>
-        <section id="voluntario">
+        <section className="voluntario" id="voluntario">
           <h2>Voluntarie-se</h2>
           <p>Ser voluntário no Coração Quentinho é aprender, crescer, transformar vidas e viver a empatia de forma prática.</p>
 
@@ -187,7 +201,7 @@ function App() {
 
         {/* apoie nosso trabalho */}
 
-        <section id="apoio">
+        <section className="apoio" id="apoio">
           <h2>Apoie a Nossa Causa</h2>
           <p>Sua contribuição mantém nossos projetos vivos e impactando vidas todos os dias.</p>
 
