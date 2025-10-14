@@ -5,7 +5,7 @@ import './index.css';
 
 import App from './App.jsx';
 import Login from './Login.jsx';
-import Admin from './admin.jsx';
+import Admin from './Admin.jsx';
 
 const router = createBrowserRouter([
   {
