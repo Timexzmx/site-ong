@@ -57,24 +57,8 @@ function App() {
           )}
         </nav>
       </header>
-
-
-        {/* inicio */}
-
-      <main>
-        <section className="transformando">
-          <div className="transformando-todo">
-            <div className="transformando-texto">
-              <h2>Transformamos <br /> <span id="vulnerabilidade">Vulnerabilidade</span> em <br />Esperança</h2>
-
-              <p id="transformando-info">Há quase 3 anos, o Coração Quentinho atua no Recife, levando refeições, cestas básicas, cadeiras de rodas, aulas de artesanato e apoio socioemocional para crianças. Somos movidos pela solidariedade e pelo amor ao próximo.
-              </p>
-
-
-            </div>
-          </div>
           {/* imagem */}
-        </section>
+        <main>
         <section className="historia-ong">
           
            <div className="imagem">

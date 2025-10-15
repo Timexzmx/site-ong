@@ -15,8 +15,8 @@ html {
 }
 /* corpo */ 
 body {
-  width: 100vw;
-  height: auto;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -436,50 +436,6 @@ main{
   }
 }
 
-@media (max-width: 720px){
-  .cabecalho nav{
-    position: relative;
-  }
-
-  .transformando-texto {
-    padding: 40px;
-    gap: 20px;
-  }
-
-  .cards {
-    flex-wrap: wrap;
-    height: auto;
-  }
-
-  .missao, .visao, .valores {
-    width: 45%;
-    height: auto;
-  }
-
-  .acoes-1, .acoes-2 {
-    flex-wrap: wrap;
-    gap: 40px;
-    justify-content: center;
-  }
-
-  .entrega, .cestas, .aulas, .cadeiras, .socioemocional {
-    width: 40%;
-  }
-
-  .vantagens {
-    gap: 10%;
-  }
-}#mobileNavbar{
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-}
-.menuIcon{
-  width: 40px;
-  height: 40px;
-
-}
-
 @media(max-width: 768px){
   
   #logo{
@@ -842,5 +798,49 @@ main{
 .localizacao p{
   color: #757575;
 }
+
+}
+
+@media (max-width: 720px){
+  .cabecalho nav{
+    position: relative;
+  }
+
+  .transformando-texto {
+    padding: 40px;
+    gap: 20px;
+  }
+
+  .cards {
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  .missao, .visao, .valores {
+    width: 45%;
+    height: auto;
+  }
+
+  .acoes-1, .acoes-2 {
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+  }
+
+  .entrega, .cestas, .aulas, .cadeiras, .socioemocional {
+    width: 40%;
+  }
+
+  .vantagens {
+    gap: 10%;
+  }
+}#mobileNavbar{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.menuIcon{
+  width: 40px;
+  height: 40px;
 
 }
