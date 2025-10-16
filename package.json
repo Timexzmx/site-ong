@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && cpx static.json dist/",
+    "build": "vite build && npx cpx static.json list/",
     "lint": "eslint .",
     "preview": "vite preview"
   },
