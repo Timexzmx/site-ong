@@ -37,7 +37,7 @@ function App() {
       {/* cabeçalho */}
 
       <header className="cabecalho">
-          <img src="../src/img/logo.png" className="logo" />
+          <img src="/logo.png" className="logo" />
 
         <nav className="cabecalho-navegacao">
           {windowScreenSize <= mobileSize ? (
@@ -80,9 +80,9 @@ function App() {
               slidesPerView={1}
               className='img'
             >
-              <SwiperSlide><img className='imgCarrossel' src="../src/img/imagem.png" /></SwiperSlide>
-              <SwiperSlide><img className='imgCarrossel' src="../src/img/carrossel1.jpg" /></SwiperSlide>
-              <SwiperSlide><img className='imgCarrossel' src="../src/img/carrossel2.jpg" /></SwiperSlide>
+              <SwiperSlide><img className='imgCarrossel' src="/imagem.png" /></SwiperSlide>
+              <SwiperSlide><img className='imgCarrossel' src="/carrossel1.jpg" /></SwiperSlide>
+              <SwiperSlide><img className='imgCarrossel' src="/carrossel2.jpg" /></SwiperSlide>
             </Swiper>
           </div>
           
@@ -195,7 +195,7 @@ function App() {
               <p>PIX para doações:</p>
             </div>
             <div className="pix-qrcode">
-              <img src="../src/img/qrcode.png" alt="pix doações" />
+              <img src="/qrcode.png" alt="pix doações" />
               <p>Titular: Gilma Galvão Mendes</p>
             </div>
 
@@ -217,7 +217,7 @@ function App() {
               <h2>Nossas Redes Sociais</h2>
               <p>
                 <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/instagram-white-icon.png" />@ongcoracaoquentinho</p>
-              <img src="../src/img/ig_qrcode.png" id="ig_qrcode" alt="qrcode instagram" />
+              <img src="/ig_qrcode.png" id="ig_qrcode" alt="qrcode instagram" />
             </div>
           </div>
           <footer className="rodape">
