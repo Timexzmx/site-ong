@@ -29,38 +29,30 @@ body {
 .cabecalho{
   width: 100%;
   height: auto;
-  padding: 40px;
+  /* padding: 40px; */
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
 
+  z-index: 9999999999999999999999999;
 }
-
-/* logo coração quentinho - div */
-
-.logo-cabecalho{
- 
-  display: flex;
-  gap: 15px;
-  width: 100%;
-  font-size: 32px;
-}
-
-/* logo coração quentinho - imagem */
-
 .logo{
   padding: 10px;
   width: 120px;
 }
-
 /* navbar */ 
 .cabecalho-navegacao{
-  
   display: flex;
   gap: 20px;
   width: 100%;
   padding: 20px;
   justify-content: right;
+  align-items: center;
 }
 /* navbar texto */
 .cabecalho-navegacao a{
@@ -73,6 +65,9 @@ body {
   background-color: transparent;
   border: none;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.7rem;
 }
 .menuIcon{
   width: 40px;
@@ -114,19 +109,23 @@ main{
 .historia-ong{
   width: 100%;
   height: auto;
-  min-height: 60vh;
+  /* min-height: 60vh; */
   display: flex;
-  gap: 50px;
+  gap: 25px;
   flex-direction: column;
   justify-content: center;
   background-color: #f5f5f5;
+  padding-top: 129px;
+  padding-bottom: 40px;
 }
 
 .transformando{
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  align-items: center;
+  padding: 40px 0;
+  
 }
 .transformando-texto{
   display: flex;
@@ -135,15 +134,16 @@ main{
   align-items: center;
   text-align: center;
   width: 1 1 50%;
+  gap: 1.5rem;
 }
 .transformando-texto h2{
   font-size: 48px;
-  width: 100%;
-
+  width: 90%;
 }
 .transformando-info{
   font-size: 20px;
   color: #757575;
+  max-width: 1000px;
 }
 .vulnerabilidade{
   color: red;
@@ -154,16 +154,17 @@ main{
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 50px;
 }
 .img {
-  margin: 0 auto;
+  margin: 0 0;
   width: 100%;
   max-width: 800px;
 }
 .imgCarrossel {
   width: 100%;
-  height: auto;
-  max-height: 20vh;        
+  height: 500px;
+  /* max-height: 20vh;         */
   object-fit: contain;    
   display: block;
   border-radius: 5px;
@@ -174,22 +175,26 @@ main{
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 40px;
+  padding: 40px 0;
   height: auto;
   min-height: 50vh;
   justify-content: center;
   align-items: center;
+  scroll-margin-top: 100px;
+  
 }
 #quem-somos div{
  width: 1 1 60%;
+ text-align: center;
 }
 #quem-somos h2{
-  font-size: 36px;
+  font-size: 36px;  
 }
 #quem-somos div p{
   font-size: 20px;
   color: #757575;
   font-style: Regular;
+  max-width: 1000px;
 }
 #cards{
   width: 100%;
@@ -199,25 +204,29 @@ main{
   align-items: center;
   justify-content: center; 
   gap: 20px;   
-  display: flex;
   height: auto;
   min-height: 50vh;
+  scroll-margin-top: 100px;
 }
 .missao, .visao, .valores{
    color: white;
   background-color: #F83B46;
   text-align: center;
   padding: 40px;
-  flex: 1 1 250px;    
+  flex: 1 1 250px;
+  height: min-content;
   max-width: 300px;       
   min-width: 200px;     
   min-height: 10vh;
-  max-height: 15vh;
+  max-height: 400px;
   gap: 20px;
   display: flex;
   flex-direction: column;
   overflow-wrap: break-word; 
   word-wrap: break-word;
+
+  justify-content: center;
+  align-items: center;
 }
 .missao h2, .visao h2, .valores h2{
   font-size: 24px;
@@ -229,6 +238,7 @@ main{
   gap: 20px;
  background-color: #f5f5f5;
  padding: 40px;
+ scroll-margin-top: 100px;
 }
 .acoes-cards{
   display: flex;
@@ -254,6 +264,9 @@ main{
   padding: 30px;
   border-radius: 20px;
 
+}
+.entrega, .cestas, .aulas, .cadeiras, .socioemocional{
+  min-width: 200px;
 }
 .entrega h2, .cestas h2, .aulas h2{
   font-size: 24px;
@@ -296,6 +309,7 @@ main{
   align-items: center;
   gap: 40px;
   padding: 60px;
+  scroll-margin-top: 100px;
 }
 #voluntario h2{
   font-size: 32px;
@@ -306,13 +320,14 @@ main{
 .vantagens{
   color: #757575;
   display: flex;
-  gap: 20%;
+  gap: 20px;
   width: 100%;
   padding: 20px;
   justify-content:center;
   align-items: center;
 }
 .parte1, .parte2{
+  /* text-align: center; */
   text-align: left;
 }
 #voluntario button{
@@ -337,6 +352,7 @@ main{
   color: white;
   padding: 40px;
   gap: 20px;
+  scroll-margin-top: 100px;
 }
 .pix{
   padding: 20px;
@@ -430,19 +446,13 @@ main{
 
 /* tablet / notebook médio */
 
-@media (max-width: 1024px) {
-  .cabecalho {
-    padding: 20px;
-  }
-}
-
 @media(max-width: 768px){
   
-  #logo{
+  .logo{
   padding: 10px;
-  max-width: 200px;
+  width: 100px;
 }
-  .cabecalho{
+  /* .cabecalho{
   width: 100%;
   height: auto;
   min-height: 70vh;
@@ -450,13 +460,13 @@ main{
   display: flex;
   flex-direction: column;
   gap: 30px;
-}
-.cabecalho-logo{
+} */
+/* .cabecalho-logo{
   display: flex;
   gap: 15px;
   font-size: 32px;
-}
-.cabecalho-navegacao{
+} */
+/* .cabecalho-navegacao{
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -465,13 +475,13 @@ main{
   align-items: center;
   text-align: bottom;
 
-}
-.cabecalho-navegacao a{
+} */
+/* .cabecalho-navegacao a{
    text-decoration: none;
   
    width: 100%;
    
-}
+} */
 #doe {
   background-color: red;
  padding: 15px;
@@ -514,6 +524,9 @@ main{
   font-size: 16px;
   color: #757575;
 }
+#quem-somos div p{
+  font-size: 16px;
+}
 .vulnerabilidade{
   color: red;
 }
@@ -544,7 +557,7 @@ main{
   padding: 40px;
   width: 100%;
   height: auto;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   justify-content: center;
   align-items: center;
 }
@@ -570,10 +583,9 @@ main{
   align-items: center;
   justify-content: center; 
   gap: 40px;   
-  display: flex;
   height: auto;
   min-height: 100vh;
-  padding: 40px;
+  /* padding: 40px; */
 }
 .missao, .visao, .valores{
   color: white;
@@ -581,7 +593,8 @@ main{
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 60%;
+  width: 80%;
+  min-width: 280px;
   text-align: center;
   font-size: 14px;
   height: auto;
@@ -685,11 +698,11 @@ main{
   gap: 40px;
   width: 100%;
   padding: 20px;
-  text-align: left;
+  text-align: center;
 }
 .parte1, .parte2{
-  text-align: left;
-  width: 80%;
+  /* text-align: center; */
+  width: 100%;
 }
 .voluntario button{
   background-color: red;
@@ -715,7 +728,8 @@ main{
 }
 .pix{
   padding: 20px;
-  width: 80%;
+  width: 100%;
+  max-width: 350px;
   border-radius: 20px;
   background-color: white;
   display: flex;
@@ -735,7 +749,7 @@ main{
   gap: 10px;
 }
 .pix-qrcode img{
-  min-width: 200px;
+  min-width: 150px;
 }
 .apoio a {
   display: flex;
@@ -832,7 +846,7 @@ main{
   }
 
   .vantagens {
-    gap: 10%;
+    /* gap: 10%; */
   }
 }#mobileNavbar{
   background-color: transparent;

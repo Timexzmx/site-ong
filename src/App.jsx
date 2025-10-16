@@ -2,9 +2,10 @@ import { useState, useEffect } from 'react'
 import './App.css'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import CadastroFormulario from './componentes/CadastroFormulario.jsx';
 import Message from './componentes/Message.jsx';
 import MenuHome from './componentes/MenuHome.jsx'
@@ -29,22 +30,21 @@ function App() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const mobileSize = 720;
 
   return (
     <>
       {/* cabeçalho */}
 
       <header className="cabecalho">
-        <div className="logo-cabecalho">
           <img src="../src/img/logo.png" className="logo" />
-        </div>
 
         <nav className="cabecalho-navegacao">
-          {windowScreenSize <= 720 ? (
+          {windowScreenSize <= mobileSize ? (
             <>
             <button id="mobileNavbar" type='button' onClick={() => {
               setDisplayMenu(!displayMenu);
-            }}><Menu className='menuIcon'/></button>
+            }}><Menu className='menuIcon'/> Menu</button>
             </>
           ) : (
             <>
@@ -58,13 +58,23 @@ function App() {
         </nav>
       </header>
           {/* imagem */}
-        <main>
+        <main id='landingPageMain'>
         <section className="historia-ong">
           
+          <div className="transformando">
+            <div className="transformando-texto">
+              <h2>Transformamos <span className="vulnerabilidade">Vulnerabilidade</span> em Esperança</h2>
+
+              <p className="transformando-info">Há quase 3 anos, o Coração Quentinho atua no Recife, levando refeições, cestas básicas, cadeiras de rodas, aulas de artesanato e apoio socioemocional para crianças. Somos movidos pela solidariedade e pelo amor ao próximo.
+              </p>
+
+            </div>
+          </div>
            <div className="imagem">
             <Swiper
-              modules={[Navigation]}
-              navigation
+              modules={[Navigation, Pagination]}
+              navigation={windowScreenSize <= mobileSize ? false : true}
+              pagination={windowScreenSize <= mobileSize ? { clickable: true } : false}
               loop={true}
               spaceBetween={50}
               slidesPerView={1}
@@ -76,22 +86,13 @@ function App() {
             </Swiper>
           </div>
           
-          <div className="transformando">
-            <div className="transformando-texto">
-              <h2>Transformamos <br /> <span className="vulnerabilidade">Vulnerabilidade</span> em <br />Esperança</h2>
-
-              <p className="transformando-info">Há quase 3 anos, o Coração Quentinho atua no Recife, levando refeições, cestas básicas, cadeiras de rodas, aulas de artesanato e apoio socioemocional para crianças. Somos movidos pela solidariedade e pelo amor ao próximo.
-              </p>
-
-            </div>
-          </div>
           {/* imagem */}
 
          
         </section>
 
         <section className="quem-somos" id="quem-somos">
-          <h2>Quem somos</h2>
+          <h2>Quem somos?</h2>
           <div>
             <p>O Coração Quentinho é uma ONG formada por voluntários que distribuem jantas para pessoas em situação de rua,
               doam alimentos, cadeiras de rodas e de banho, e promovem aulas de artesanato e apoio socioemocional.
