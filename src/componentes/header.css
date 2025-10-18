@@ -1,0 +1,36 @@
+.headerAdmin{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    position: static;
+}
+#logoContainer{
+    display: flex;
+    flex-direction: row;
+    column-gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+#logo{
+    width: 80px;
+}
+#txtHeader{
+    color: #FF0000;
+}
+#logout{
+    color: white;
+    background-color: #FF0000;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.5rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+}

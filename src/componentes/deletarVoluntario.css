@@ -1,0 +1,69 @@
+#deletarVoluntarioContainerMaxPro{
+    
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.41);
+
+    width: 100%;
+    height: 100%;
+    z-index: 9999999999999999999999999999999999999999999;
+}
+#deletarButtonContainerMasterPro{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 70%;
+    max-width: 400px;
+    min-width: 270px;
+    row-gap: 2rem;
+    border-radius: 10px;
+    text-align: center;
+}
+#titleDeletar{
+    color: #FF0000;
+    font-size: 1.2rem;
+}
+#deletarButtonContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.deletarButton{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.5rem;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    width: 40%;
+    min-width: 150px;
+    max-width: 280px;
+}
+#simButton{
+    background-color: rgb(227, 2, 2);
+}
+#simButton:hover{
+    background-color: rgb(151, 3, 3);
+}
+#naoButton{
+    background-color: rgb(17, 198, 17);
+}
+#naoButton:hover{
+    background-color: rgb(10, 126, 10);
+}
+
