@@ -438,6 +438,7 @@ main{
 }
 .localizacao p{
   color: #757575;
+  text-align: center;
 }
 .rodape{
   width: 100%;

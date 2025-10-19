@@ -34,7 +34,7 @@ function CadastroFormulario(props) {
 
 
     async function enviarFormulario() {
-        if(nomeCompletoError === true || emailError === true || telefoneError === true){
+        if (nomeCompletoError === true || emailError === true || telefoneError === true) {
             setDisplaySubmitError(true);
             setSubmitError('Todos os campos devem ser validos');
             return;
@@ -109,24 +109,40 @@ function CadastroFormulario(props) {
                     <input type="text" className="cadastroVoluntario-input" placeholder="Nome Completo*" value={nomeCompleto} onChange={(e) => {
                         setNomeCompleto(e.target.value);
 
-                    }} required />
+                    }} required onKeyDown={(e) => {
+                        if (e.key === 'Enter') {
+                           enviarFormulario();
+                        }
+                    }}/>
                     <p className="errorMessageInput" style={nomeCompletoError ? { color: 'red' } : { color: 'green' }}>O nome só pode conter letras e espaços.</p>
 
                     <input type="email" className="cadastroVoluntario-input" placeholder="Email*" value={email} onChange={(e) => {
                         setEmail(e.target.value);
 
-                    }} required />
+                    }} required onKeyDown={(e) => {
+                        if (e.key === 'Enter') {
+                           enviarFormulario();
+                        }
+                    }}/>
                     <p className="errorMessageInput" style={emailError ? { color: 'red' } : { color: 'green' }}>Insira um email válido.</p>
 
                     <input type="text" className="cadastroVoluntario-input" placeholder="Telefone" value={telefone} onChange={(e) => {
                         setTelefone(e.target.value);
 
-                    }} />
+                    }} onKeyDown={(e) => {
+                        if (e.key === 'Enter') {
+                           enviarFormulario();
+                        }
+                    }}/>
                     <p className="errorMessageInput" style={telefoneError ? { color: 'red' } : { color: 'green' }}>Insira um telefone válido.</p>
 
                     <input type="text" className="cadastroVoluntario-input" placeholder="Disponibillidade/Observações" value={observacoes} onChange={(e) => {
                         setObservacoes(e.target.value);
-                    }} />
+                    }} onKeyDown={(e) => {
+                        if (e.key === 'Enter') {
+                           enviarFormulario();
+                        }
+                    }}/>
                 </div>
                 <p className="submitError">{displaySubmitError ? submitError : null}</p>
                 <button id="cadastroVoluntarioSubmit" onClick={(e) => {
