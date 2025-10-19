@@ -22,7 +22,7 @@ function Header() {
         <>
             <header className="cabecalho headerAdmin">
                 <div id="logoContainer">
-                    <img src="/logo.png" id="logo" />
+                    <a href="/"><img src="/logo.png" id="logo" /></a>
                     {/* <p id="txtHeader">{windowScreenSize >= mobileSize ? "Coração Quentinho - Administração" : 'Administração'}</p> */}
                 </div>
 

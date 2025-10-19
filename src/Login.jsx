@@ -92,7 +92,6 @@ function Login() {
                 <div className="buttonSubmitContainer">
                     <p id="loginError">{loginError}</p>
                     <button className="loginSubmitButton" onClick={submitLogin} >Entrar</button>
-                    <a href="#" id="esqueciASenha">Esqueci a Senha</a>
                 </div>
             </div>
             {displayMessage ? <Message setDisplayMessage={setDisplayMessage} message={message} isMessageError={isMessageError} /> : null}
