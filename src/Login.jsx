@@ -20,13 +20,13 @@ function Login() {
     const [isMessageError, setIsMessageError] = useState(false);
     const [message, setMessage] = useState('');
     
-    useEffect(() => {
-    const token = localStorage.getItem("token");
+//     useEffect(() => {
+//     const token = localStorage.getItem("token");
 
-    if (token && token.startsWith("Bearer ")) {
-      navigate("/admin");
-    }
-  }, [navigate]);
+//     if (token && token.startsWith("Bearer ")) {
+//       navigate("/admin");
+//     }
+//   }, [navigate]);
 
     async function submitLogin() {
         try {
@@ -38,14 +38,13 @@ function Login() {
 
             const response = await fetch('https://coracao-quentinho-ong-production.up.railway.app/auth/login', {
                 method: 'POST',
+                credentials: 'include',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({ username: email, password: password })
             });
             if (response.ok) {
-                const result = await response.json();
-                localStorage.setItem('token', result.token)
                 navigate('/admin');
             } else {
                 const result = await response.json();

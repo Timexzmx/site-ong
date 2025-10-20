@@ -11,7 +11,7 @@ import './Admin.css';
 
 function Admin() {
 
-    const token = localStorage.getItem('token');
+    // const token = localStorage.getItem('token');
     const navigate = useNavigate();
 
     const [displayMessage, setDisplayMessage] = useState(false)
@@ -70,9 +70,10 @@ function Admin() {
             try {
                 const response = await fetch('https://coracao-quentinho-ong-production.up.railway.app/voluntarios/buscar', {
                     method: "GET",
+                    credentials: 'include',
                     headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': token
+                        'Content-Type': 'application/json'
+                        // 'Authorization': token
                     }
                 });
                 console.log(response);
@@ -81,17 +82,7 @@ function Admin() {
                     console.log(result);
                     setVoluntarios(result);
                 } else {
-                    if (!token) {
-                        navigate('/login');
-                    }
-                    if (token && !token.startsWith('Bearer ')) {
-                        localStorage.removeItem('token');
-                        navigate('/login');
-                    }
-                    if (token && token.startsWith('Bearer ')) {
-                        localStorage.removeItem('token');
-                        navigate('/login');
-                    }
+                    navigate('/login');
                 }
             } catch (err) {
                 console.log(err);

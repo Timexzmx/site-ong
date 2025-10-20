@@ -65,7 +65,7 @@ function App() {
             <div className="transformando-texto">
               <h2>Transformamos <span className="vulnerabilidade">Vulnerabilidade</span> em Esperança</h2>
 
-              <p className="transformando-info">Há quase 3 anos, o Coração Quentinho atua no Recife, levando refeições, cestas básicas, cadeiras de rodas, aulas de artesanato e apoio socioemocional para crianças. Somos movidos pela solidariedade e pelo amor ao próximo.
+              <p className="transformando-info">Há 4 anos, o Coração Quentinho atua no Recife, levando refeições, cestas básicas, cadeiras de rodas, aulas de artesanato e apoio socioemocional para crianças. Somos movidos pela solidariedade e pelo amor ao próximo.
               </p>
 
             </div>
@@ -85,7 +85,6 @@ function App() {
               className='img'
                 >
               <SwiperSlide><img className='imgCarrossel' src="/foto01.jpg" /></SwiperSlide>
-              <SwiperSlide><img className='imgCarrossel' src="/imagem.png" /></SwiperSlide>
               <SwiperSlide><img className='imgCarrossel' src="/carrossel1.jpg" /></SwiperSlide>
               <SwiperSlide><img className='imgCarrossel' src="/carrossel2.jpg" /></SwiperSlide>
               <SwiperSlide><img className='imgCarrossel' src="/foto02.jpg" /></SwiperSlide>
@@ -225,7 +224,7 @@ function App() {
         <div className="saiba-mais-todo">
           <div className="localizacao">
             <h2>Nossa Localização</h2>
-            <p>Igreja Evangelica Livre <br />R. Isaac Markman, 440 - Bongi, Recife - PE, 50751-370</p>
+            <p>Igreja Evangelica Livre <br />R. Isaac Markman, 440 - Bongi, Recife - PE, 50751-370 (Provisória)</p>
           </div>
           <div className="redes">
             <h2>Nossas Redes Sociais</h2>

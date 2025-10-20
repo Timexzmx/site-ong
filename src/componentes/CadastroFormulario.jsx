@@ -53,6 +53,7 @@ function CadastroFormulario(props) {
         try {
             const response = await fetch('https://coracao-quentinho-ong-production.up.railway.app/voluntarios/cadastrar', {
                 method: 'POST',
+                credentials: "include",
                 headers: {
                     'Content-Type': 'application/json'
                 },

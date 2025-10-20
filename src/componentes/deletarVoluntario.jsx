@@ -5,15 +5,16 @@ import './deletarVoluntario.css';
 
 function DeletarVoluntario({ voluntarioID, setDisplayDeletarVoluntario, voluntarioNome, setMessage, setDisplayMessage, setIsMessageError, voluntarios, setVoluntarios }) {
 
-    const token = localStorage.getItem('token');
+    // const token = localStorage.getItem('token');
 
     async function enviarDeletarVoluntario() {
         try {
             const response = await fetch(`https://coracao-quentinho-ong-production.up.railway.app/voluntarios/deletar/${voluntarioID}`, {
                 method: 'delete',
+                credentials: "include",
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': token
+                    // 'Authorization': token
                 }
             })
             if (response.ok) {

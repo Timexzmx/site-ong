@@ -26,7 +26,7 @@ function EditarVoluntario({ voluntarioID, setDisplayEditarVoluntario, setMessage
 
     const [errorMessage, setErrorMessage] = useState('');
 
-    const token = localStorage.getItem('token');
+    // const token = localStorage.getItem('token');
 
     useEffect(() => {
         const nomeRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/;
@@ -64,12 +64,13 @@ function EditarVoluntario({ voluntarioID, setDisplayEditarVoluntario, setMessage
                 return;
             }
 
-            console.log('Token: ' + token);
+            // console.log('Token: ' + token);
             const response = await fetch(`https://coracao-quentinho-ong-production.up.railway.app/voluntarios/atualizar/${voluntarioID}`, {
                 method: 'put',
+                credentials: "include",
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': token
+                    // 'Authorization': token
                 },
                 body: JSON.stringify({
                     nomeCompleto: newNomeCompleto,
