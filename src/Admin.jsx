@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import Header from './componentes/header.jsx';
 import EditarVoluntario from './componentes/editarVoluntario.jsx';
 import DeletarVoluntario from './componentes/deletarVoluntario.jsx';
+import Loading from './componentes/loading.jsx';
+
 import Message from './componentes/Message.jsx';
 import { SquarePen, Trash, MessageCircle, Phone, Mail } from 'lucide-react';
 
@@ -17,7 +19,7 @@ function Admin() {
     const [displayMessage, setDisplayMessage] = useState(false)
     const [isMessageError, setIsMessageError] = useState(false);
     const [message, setMessage] = useState('')
-
+    const [displayLoading, setDisplayLoading] = useState(false);
     const [pesquisarVoluntario, setPesquisarVoluntario] = useState('');
 
     const [voluntarioNome, setVoluntarioNome] = useState('');
@@ -47,7 +49,7 @@ function Admin() {
                     <h2 className="titleVoluntario">{voluntario.nome}</h2>
                     <p className="textContent"><Phone className='voluntarioIcons' />{voluntario.telefone}</p>
                     <p className="textContent"><Mail className='voluntarioIcons' />{voluntario.email}</p>
-                    <p className="textContent"><span className='tagTextContent'>Observações: </span>{voluntario.observacoes}</p>
+                    <p className="textContent"><span className='tagTextContent'>Observações: </span>{voluntario.detalhes}</p>
                 </div>
                 <div className="buttonsContainer">
                     <button className="actionButton" id='editarButton' onClick={() => {
@@ -68,6 +70,7 @@ function Admin() {
     useEffect(() => {
         async function pegarDados() {
             try {
+                setDisplayLoading(true)
                 const response = await fetch('https://coracao-quentinho-ong-production.up.railway.app/voluntarios/buscar', {
                     method: "GET",
                     credentials: 'include',
@@ -76,6 +79,7 @@ function Admin() {
                         // 'Authorization': token
                     }
                 });
+                setDisplayLoading(false)
                 console.log(response);
                 if (response.ok) {
                     const result = await response.json();
@@ -97,7 +101,8 @@ function Admin() {
 
     return (
         <div id='adminPage'>
-            <Header />
+            <Header setDisplayMessage={setDisplayMessage} setIsMessageError={setIsMessageError} setMessage={setMessage}
+            setDisplayLoading={setDisplayLoading}/>
 
             <input type="text" id='searchInput' placeholder='Ex: Luciano Almeida' value={pesquisarVoluntario} onChange={(e) => setPesquisarVoluntario(e.target.value)}/>
 
@@ -117,11 +122,34 @@ function Admin() {
                 </div>
             </main>
 
-            {displayEditarVoluntario ? <EditarVoluntario setDisplayMessage={setDisplayMessage} setDisplayEditarVoluntario={setDisplayEditarVoluntario} voluntarioID={voluntarioID} setIsMessageError={setIsMessageError} setMessage={setMessage} voluntarios={voluntarios} setVoluntarios={setVoluntarios} /> : null}
+            {displayEditarVoluntario ? 
+            <EditarVoluntario setDisplayMessage={setDisplayMessage}
+            setDisplayEditarVoluntario={setDisplayEditarVoluntario} 
+            voluntarioID={voluntarioID} 
+            setIsMessageError={setIsMessageError} 
+            setMessage={setMessage} 
+            voluntarios={voluntarios} 
+            setVoluntarios={setVoluntarios} 
+            setDisplayLoading={setDisplayLoading}/> : null}
 
-            {displayDeletarVoluntario ? <DeletarVoluntario setDisplayDeletarVoluntario={setDisplayDeletarVoluntario} voluntarioID={voluntarioID} voluntarioNome={voluntarioNome} setDisplayMessage={setDisplayMessage} setIsMessageError={setIsMessageError} setMessage={setMessage} voluntarios={voluntarios} setVoluntarios={setVoluntarios} /> : null}
+            {displayDeletarVoluntario ? 
+            <DeletarVoluntario setDisplayDeletarVoluntario={setDisplayDeletarVoluntario} 
+            voluntarioID={voluntarioID} 
+            voluntarioNome={voluntarioNome} 
+            setDisplayMessage={setDisplayMessage} 
+            setIsMessageError={setIsMessageError} 
+            setMessage={setMessage} 
+            voluntarios={voluntarios} 
+            setVoluntarios={setVoluntarios} 
+            setDisplayLoading={setDisplayLoading}/> : null}
 
-            {displayMessage ? <Message setDisplayMessage={setDisplayMessage} message={message} isMessageError={isMessageError} /> : null}
+            {displayMessage ? 
+            <Message 
+            setDisplayMessage={setDisplayMessage} 
+            message={message} 
+            isMessageError={isMessageError} /> : null}
+           
+            {displayLoading ? <Loading /> : null}
         </div>
     )
 }

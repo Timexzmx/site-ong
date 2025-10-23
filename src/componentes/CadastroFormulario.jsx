@@ -51,6 +51,7 @@ function CadastroFormulario(props) {
         console.log('telefone:' + telefone);
         console.log('observacoes:' + observacoes);
         try {
+            props.setDisplayLoading(true);
             const response = await fetch('https://coracao-quentinho-ong-production.up.railway.app/voluntarios/cadastrar', {
                 method: 'POST',
                 credentials: "include",
@@ -64,6 +65,7 @@ function CadastroFormulario(props) {
                     detalhes: observacoes
                 })
             });
+            props.setDisplayLoading(false);
             if (response.ok) {
                 const result = await response.json()
                 console.log(result);

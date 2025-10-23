@@ -3,12 +3,12 @@ import { useState, useEffect } from 'react';
 import { X, SquarePen } from 'lucide-react';
 import './editarVoluntario.css';
 
-function EditarVoluntario({ voluntarioID, setDisplayEditarVoluntario, setMessage, setDisplayMessage, setIsMessageError, voluntarios, setVoluntarios }) {
+function EditarVoluntario({ voluntarioID, setDisplayEditarVoluntario, setMessage, setDisplayMessage, setIsMessageError, voluntarios, setVoluntarios, setDisplayLoading }) {
 
 
     let oldVoluntario = voluntarios.find((v) => { return v.id == voluntarioID });
-    if (!oldVoluntario.observacao) {
-        oldVoluntario.observacao = '';
+    if (!oldVoluntario.detalhes) {
+        oldVoluntario.detalhes = '';
     }
     // console.log(oldVoluntario)
 
@@ -22,7 +22,7 @@ function EditarVoluntario({ voluntarioID, setDisplayEditarVoluntario, setMessage
     const [newNomeCompleto, setNewNomeCompleto] = useState(oldVoluntario.nome);
     const [newEmail, setNewEmail] = useState(oldVoluntario.email);
     const [newTelefone, setNewTelefone] = useState(oldVoluntario.telefone);
-    const [newObservacao, setNewObservacao] = useState(oldVoluntario.observacao);
+    const [newDetalhes, setNewDetalhes] = useState(oldVoluntario.detalhes);
 
     const [errorMessage, setErrorMessage] = useState('');
 
@@ -48,7 +48,7 @@ function EditarVoluntario({ voluntarioID, setDisplayEditarVoluntario, setMessage
             if (oldVoluntario.nome === newNomeCompleto &&
                 oldVoluntario.email === newEmail &&
                 oldVoluntario.telefone === newTelefone &&
-                oldVoluntario.observacao === newObservacao) {
+                oldVoluntario.detalhes === newDetalhes) {
 
                 setErrorMessage('Nenhuma alteração detectada!');
                 return;
@@ -65,6 +65,7 @@ function EditarVoluntario({ voluntarioID, setDisplayEditarVoluntario, setMessage
             }
 
             // console.log('Token: ' + token);
+            setDisplayLoading(true);
             const response = await fetch(`https://coracao-quentinho-ong-production.up.railway.app/voluntarios/atualizar/${voluntarioID}`, {
                 method: 'put',
                 credentials: "include",
@@ -76,9 +77,10 @@ function EditarVoluntario({ voluntarioID, setDisplayEditarVoluntario, setMessage
                     nomeCompleto: newNomeCompleto,
                     email: newEmail,
                     telefone: newTelefone,
-                    detalhes: newObservacao
+                    detalhes: newDetalhes
                 })
             });
+            setDisplayLoading(false);
             console.log(response.ok);
             if (response.ok) {
 
@@ -91,7 +93,7 @@ function EditarVoluntario({ voluntarioID, setDisplayEditarVoluntario, setMessage
                             nome: newNomeCompleto,
                             email: newEmail,
                             telefone: newTelefone,
-                            observacao: newObservacao || ''
+                            detalhes: newDetalhes || ''
                         }
                     }
                 })
@@ -166,8 +168,8 @@ function EditarVoluntario({ voluntarioID, setDisplayEditarVoluntario, setMessage
                     <div className="inputContainerVoluntario">
                         <label className="labelVoluntario">
                             Observação</label>
-                        <input type="text" className="inputVoluntario" value={newObservacao} onChange={(e) => {
-                            setNewObservacao(e.target.value);
+                        <input type="text" className="inputVoluntario" value={newDetalhes} onChange={(e) => {
+                            setNewDetalhes(e.target.value);
                         }} onKeyDown={(e) => {
                             if (e.key === 'Enter') {
                                 enviarEditarVoluntario();

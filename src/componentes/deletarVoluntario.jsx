@@ -3,12 +3,13 @@ import { useState, useEffect } from 'react';
 import { CircleCheck, CircleX } from 'lucide-react';
 import './deletarVoluntario.css';
 
-function DeletarVoluntario({ voluntarioID, setDisplayDeletarVoluntario, voluntarioNome, setMessage, setDisplayMessage, setIsMessageError, voluntarios, setVoluntarios }) {
+function DeletarVoluntario({ voluntarioID, setDisplayDeletarVoluntario, voluntarioNome, setMessage, setDisplayMessage, setIsMessageError, voluntarios, setVoluntarios, setDisplayLoading }) {
 
     // const token = localStorage.getItem('token');
 
     async function enviarDeletarVoluntario() {
         try {
+            setDisplayLoading(true)
             const response = await fetch(`https://coracao-quentinho-ong-production.up.railway.app/voluntarios/deletar/${voluntarioID}`, {
                 method: 'delete',
                 credentials: "include",
@@ -17,6 +18,7 @@ function DeletarVoluntario({ voluntarioID, setDisplayDeletarVoluntario, voluntar
                     // 'Authorization': token
                 }
             })
+            setDisplayLoading(false)
             if (response.ok) {
                 const newVoluntarios = voluntarios.filter((v) => v.id != voluntarioID)
                 setVoluntarios(newVoluntarios);

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Eye, EyeOff } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import Message from './componentes/Message.jsx';
-
+import Loading from './componentes/loading.jsx';
 import './Login.css';
 
 //PRECISA FAZER UM useEffect PRA VERIFICAR SE O USUÁRIO ESTÁ LOGADO
@@ -16,6 +16,7 @@ function Login() {
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
     
+    const [displayLoading, setDisplayLoading] = useState(false)
     const [displayMessage, setDisplayMessage] = useState(false);
     const [isMessageError, setIsMessageError] = useState(false);
     const [message, setMessage] = useState('');
@@ -35,7 +36,7 @@ function Login() {
                 return
             }
 
-
+            setDisplayLoading(true);
             const response = await fetch('https://coracao-quentinho-ong-production.up.railway.app/auth/login', {
                 method: 'POST',
                 credentials: 'include',
@@ -44,6 +45,7 @@ function Login() {
                 },
                 body: JSON.stringify({ username: email, password: password })
             });
+            setDisplayLoading(false);
             if (response.ok) {
                 navigate('/admin');
             } else {
@@ -94,6 +96,8 @@ function Login() {
                 </div>
             </div>
             {displayMessage ? <Message setDisplayMessage={setDisplayMessage} message={message} isMessageError={isMessageError} /> : null}
+
+            {displayLoading ? <Loading /> : null}
         </div>
     )
 }

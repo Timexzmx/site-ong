@@ -8,12 +8,13 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import CadastroFormulario from './componentes/CadastroFormulario.jsx';
 import Message from './componentes/Message.jsx';
-import MenuHome from './componentes/MenuHome.jsx'
-
+import MenuHome from './componentes/MenuHome.jsx';
+import Loading from './componentes/loading.jsx';
 import { Menu, X } from 'lucide-react';
 
 function App() {
 
+  const [displayLoading, setDisplayLoading] = useState(false);
   const [displayFormVoluntario, setDisplayFormVoluntario] = useState(false);
   const [displayMessage, setDisplayMessage] = useState(false);
   const [messageContent, setMessageContent] = useState('');
@@ -245,9 +246,12 @@ function App() {
           setDisplayFormVoluntario = { setDisplayFormVoluntario }
           setMessageContent = { setMessageContent }
           setDisplayMessage = { setDisplayMessage }
-          setIsMessageError = { setIsMessageError } />
+          setIsMessageError = { setIsMessageError } 
+          setDisplayLoading={setDisplayLoading}/>
         : null
 }
+
+{displayLoading ? <Loading /> : null}
 
 { displayMessage ? <Message message={messageContent} isMessageError={isMessageError} setDisplayMessage={setDisplayMessage} /> : null }
 

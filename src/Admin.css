@@ -75,11 +75,12 @@
     column-gap: 0.5rem;
     flex-wrap: wrap;
     row-gap: 0.2rem;
+    font-size: 1rem;
 }
 .tagTextContent{
     font-size: 1rem;
     font-weight: 400;
-    margin-top: 0.5rem;
+    /* margin-top: 0.5rem; */
 }
 .buttonsContainer{
     display: flex;

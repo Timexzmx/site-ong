@@ -4,7 +4,7 @@ import { LogOut } from 'lucide-react';
 import './header.css'
 
 
-function Header() {
+function Header({setDisplayMessage, setMessage, setIsMessageError, setDisplayLoading}) {
     const navigate = useNavigate();
     const [windowScreenSize, setWindowScreenSize] = useState(window.innerWidth)
 
@@ -18,6 +18,32 @@ function Header() {
 
     const mobileSize = 720;
 
+    async function logoutFunction(){
+        try{
+        setDisplayLoading(true);
+        const response = await fetch('https://coracao-quentinho-ong-production.up.railway.app/auth/logout', {
+            method: "post",
+            credentials: "include",
+            headers: {
+                "Content-Type": "application/json",
+            }
+        })
+        setDisplayLoading(false);
+        console.log(response);
+        if(response.ok){
+            navigate('/login');
+        }else{
+            setMessage('Ocorreu um erro ao deslogar, tente novamente');
+            setIsMessageError(true);
+            setDisplayMessage(true);
+            return
+        }
+        navigate('/login');
+        }catch(err){
+            console.log(err);
+        }
+    }
+
     return (
         <>
             <header className="cabecalho headerAdmin">
@@ -26,13 +52,7 @@ function Header() {
                     {/* <p id="txtHeader">{windowScreenSize >= mobileSize ? "Coração Quentinho - Administração" : 'Administração'}</p> */}
                 </div>
 
-                <button id="logout" onClick={() => {
-                    const token = localStorage.getItem('token');
-                    if(token){
-                    localStorage.removeItem('token');
-                    }
-                    navigate('/login');
-                }}><LogOut /> Sair</button>
+                <button id="logout" onClick={logoutFunction}><LogOut /> Sair</button>
             </header>
         </>
     )
