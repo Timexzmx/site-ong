@@ -21,21 +21,23 @@ function Login() {
     const [isMessageError, setIsMessageError] = useState(false);
     const [message, setMessage] = useState('');
     
-//     useEffect(() => {
-//     const token = localStorage.getItem("token");
+    if(localStorage.getItem('submitCount') === null){
+    localStorage.setItem('submitCount', 0);
+    }
+    //     useEffect(() => {
+    //     const token = localStorage.getItem("token");
 
-//     if (token && token.startsWith("Bearer ")) {
-//       navigate("/admin");
-//     }
-//   }, [navigate]);
+    //     if (token && token.startsWith("Bearer ")) {
+    //       navigate("/admin");
+    //     }
+    //   }, [navigate]);
 
     async function submitLogin() {
         try {
             if (!email.trim() || !password.trim()) {
                 setLoginError('Todos os campos devem ser preenchidos');
                 return
-            }
-
+            }  
             setDisplayLoading(true);
             const response = await fetch('https://coracao-quentinho-ong-production.up.railway.app/auth/login', {
                 method: 'POST',
@@ -45,6 +47,7 @@ function Login() {
                 },
                 body: JSON.stringify({ username: email, password: password })
             });
+
             setDisplayLoading(false);
             if (response.ok) {
                 navigate('/admin');
